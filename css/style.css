@@ -406,8 +406,9 @@ in a {
 
 	nav {
 		float: none;
+		font-size: larger;
 		/* Remove the float property */
-		max-width: 80%;
+		max-width: 50%;
 		/* Allow the nav to take up the full width */
 		width: 100%;
 		margin: 0.5rem auto;
