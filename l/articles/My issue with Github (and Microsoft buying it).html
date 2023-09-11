@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" type="text/css" href="../css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/theme.css"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Home</title>
+	</head>
+	<header class="ccsticky-nav">
+		<nav>
+			<details close="">
+				<summary><a>Links</a></summary>
+				................................
+				<ul>
+					<li><a href="../" target="_parent">Home</a></li>
+					<li><a href="../about/" target="_parent">About Me</a></li>
+					<li><a href="../content" target="_parent">Visual</a></li>
+					<li><a href="../bookmarks" target="_parent">Bookmarks</a></li>
+					....................
+					<li><a href="../resume" target="_parent">Resume</a></li>
+					<li><a href="../work#work" target="_parent">work with me</a></li>
+					........................
+					<li><a href="https://git.fosscommunity.in/on2" target="_parent">/git/</a>: packages</li>
+					<li><a href="../project" target="_parent"> Projects</a></li>
+				</ul>
+				................................
+			</details>
+		</nav>
+		<nav3>
+			<details close="">
+				<summary><a>Themes&ensp;&ensp;&ensp;&ensp;&ensp;</a></summary>
+				<li><a href="index.x.html">plain HTML</a></li>
+				<li><a href="index.html">Dark Mode</a></li>
+			</details>
+		</nav3>
+	</header>
+	<body>
+<article lang="en" class="h-entry">
+<a href="My%20issue%20with%20Github%20(and%20Microsoft%20buying%20it).html"><h1>My issue with Github (and Microsoft buying it)</h1></a>
+<h2>Embrace; Extend; Extenguish</h2>
+<p>Microsoft and similar Corporations are well-known for doing this kind of thing, we cannot have permanent links or main forges based on something like that.
+Also microsoft may like Open-Source (and probably not GPL), but the same goes to Google, do we all trust Google with our and others data? Also Google Code created a pile of dead links.<br />
+And this post will probably evolve as Microsoft apparently haven’t finished aquiring Github.</p>
+<h2>Lack of Transparency / OpenData</h2>
+<p>Currently all the tickets aren’t available in a open manner (I know gitlab can import them, but AFAIK you need a Github account for that and control over the repository).<br />
+One true alternative to this that is used in real life is debbugs (used at debian) by using emails, and bugzilla with their RSS feeds.</p>
+<p>I also see some projects and their owner from time to time being removed from GitHub with no messages at all on their side. And looking at their <a href="https://help.github.com/articles/github-terms-of-service/#m-cancellation-and-termination">Terms of Service</a> there is a bunch of ways you can be banned. (search for "suspen" and "terminat")</p>
+<h2>Centralisation of Power</h2>
+<q>Never put all your eggs in the same basket</q>
+<pre><code>
+/usr/portage $ <kbd>cat metadata/timestamp.commit</kbd>
+<samp>932f2215d9f814c7ef2dd8de6593af58e2c16048 1537662482 2018-09-23T00:28:02+00:00
+</samp>/usr/portage $ <kbd>grep -l 'github' -r */*/metadata.xml | wc -l</kbd>
+<samp>5194
+</samp>/usr/portage $ <kbd>find */*/metadata.xml | wc -l</kbd>
+<samp>19549
+</samp>/usr/portage $ <kbd>bc -l</kbd>
+<kbd>(5194/19549)*100</kbd>
+<samp>26.56913397104711238400</samp>
+</code></pre>
+<p>So if I didn’t mess up the math there is at least over 26% of software in gentoo ports/packages that are more-or-less hosted on github. I think a better version could be obtained by incrementing one package if there is github in the metadata or the latest ebuild. It would be awesome if repology.org could have some stats on VCS providers usage btw.</p>
+<h2>Github is a bad interface</h2>
+<p>(This parts also applies to most git-based Forges)</p>
+<p>Pull Requests shouldn’t be the only way to send modifications, they are meant to maintainers/frequent contributors, not someone that send patches from time to time. (I love sending months of commits to github…).<br />
+Pull Requests also puts more burden on the contributor than on the maintainer, it means that whatever modification often have to be done by the contributor otherwise it’s not mergeable, which may know nothing about your coding policies. I’m pretty sure this is how you have long-standing PRs that became broken because other stuff came in.</p>
+<p>Also GitHub is very inpopular with designers and others non-coders, and for a good reason, git is meant for versioning code/text files and it does that well. But for other stuff? No, it’s basically a hack and every contributor shouldn’t have to learn git. (note: coders don’t all know git and not having PRs would just mean knowing how to use <code>diff(1)</code>).<br />
+And one of my favorite thing from coders is <q>but GitHub allows you to edit with a web browser</q>. Yeah, but where is rebase, ammending commits, …? There is just only one commit and a broken push. Could be acceptable for a patch, not really acceptable in most cases for something that is made to be directly merged in a branch.</p>
+<p>GitHub is a registered trademark of Github Inc. ; Microsoft is a registered trademark of Microsoft Corporation.</p>
+<h2>False Security</h2>
+<p>I posted about this on the fediverse before, probably on social.hacktivis.me (RIP). So here github with their dark pattern (Update is highlighted, so not enough privacy given?) is randomly asking me to confirm my account recovery settings. And it is actually bad for security because here it means that Facebook could gain access to Github Accounts. What could go wrong? (Note: I do have a bit of write access to few projects on github).</p>
+<p>Also I use the <abbr title="Time-based One-time Password Algorithm">TOTP</abbr> token regularly and I have recovery codes in case I would lose it (actually all stored and encrypted with <a href="https://www.passwordstore.org/">pass</a>, maybe I should change that).</p>
+</article>
+<footer>
+	<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img loading="lazy" alt="CC-BY-SA" src="https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by-sa.svg" /></a>
+</footer>
+</body>
+</html>

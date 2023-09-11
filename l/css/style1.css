@@ -1,45 +1,45 @@
 /* BEGIN css/colorscheme.css */
 :root {
-	/* gruvbox dark */
-	--dark-ansi00: #282828;
-	--dark-ansi00-hard: #1d2021;
-	--dark-ansi00-soft: #32302f;
-	--dark-ansi01: #cc241d;
-	--dark-ansi02: #98971a;
-	--dark-ansi03: #d79921;
-	--dark-ansi04: #458588;
-	--dark-ansi05: #b16286;
-	--dark-ansi06: #689d6a;
-	--dark-ansi07: #a89984;
-	--dark-ansi08: #928374;
-	--dark-ansi09: #fb4934;
-	--dark-ansi10: #b8bb26;
-	--dark-ansi11: #fabd2f;
-	--dark-ansi12: #83a598;
-	--dark-ansi13: #c78888;
-	--dark-ansi14: #8ec07c;
-	--dark-ansi15: #ebdbb2;
-
-	/* gruvbox light */
-	--light-ansi-00: #fbf1c7;
-	--light-ansi-00-hard: #f9f5d7;
-	--light-ansi-00-soft: #f2e5bc;
-	--light-ansi-01: #cc241d;
-	--light-ansi-02: #98971a;
-	--light-ansi-03: #d79921;
-	--light-ansi-04: #458588;
-	--light-ansi-05: #b16286;
-	--light-ansi-06: #689d6a;
-	--light-ansi-07: #7c6f64;
-	--light-ansi-08: #928374;
-	--light-ansi-09: #9d0006;
-	--light-ansi-10: #79740e;
-	--light-ansi-11: #b57614;
-	--light-ansi-12: #076678;
-	--light-ansi-13: #8f3f71;
-	--light-ansi-14: #427b58;
-	--light-ansi-15: #3c3836;
-}
+        /* gruvbox dark */
+        --dark-ansi00: #d7d7d7; /* Inverted color */
+        --dark-ansi00-hard: #e2dfde; /* Inverted color */
+        --dark-ansi00-soft: #cdcfd0; /* Inverted color */
+        --dark-ansi01: #33dbdc; /* Inverted color */
+        --dark-ansi02: #676e85; /* Inverted color */
+        --dark-ansi03: #2866ac; /* Inverted color */
+        --dark-ansi04: #ba7aaf; /* Inverted color */
+        --dark-ansi05: #4e9a6d; /* Inverted color */
+        --dark-ansi06: #975846; /* Inverted color */
+        --dark-ansi07: #567571; /* Inverted color */
+        --dark-ansi08: #6d7c87; /* Inverted color */
+        --dark-ansi09: #04b3d3; /* Inverted color */
+        --dark-ansi10: #47449c; /* Inverted color */
+        --dark-ansi11: #0548f2; /* Inverted color */
+        --dark-ansi12: #7c59c7; /* Inverted color */
+        --dark-ansi13: #387777; /* Inverted color */
+        --dark-ansi14: #713f83; /* Inverted color */
+        --dark-ansi15: #141424; /* Inverted color */
+      
+        /* gruvbox light */
+        --light-ansi-00: #040e18; /* Inverted color */
+        --light-ansi-00-hard: #060a14; /* Inverted color */
+        --light-ansi-00-soft: #0d1a25; /* Inverted color */
+        --light-ansi-01: #33dbdc; /* Inverted color */
+        --light-ansi-02: #676e85; /* Inverted color */
+        --light-ansi-03: #2866ac; /* Inverted color */
+        --light-ansi-04: #ba7aaf; /* Inverted color */
+        --light-ansi-05: #4e9a6d; /* Inverted color */
+        --light-ansi-06: #975846; /* Inverted color */
+        --light-ansi-07: #8b989d; /* Inverted color */
+        --light-ansi-08: #6d7c87; /* Inverted color */
+        --light-ansi-09: #f262f9; /* Inverted color */
+        --light-ansi-10: #868b4d; /* Inverted color */
+        --light-ansi-11: #4a839c; /* Inverted color */
+        --light-ansi-12: #f89187; /* Inverted color */
+        --light-ansi-13: #7070b0; /* Inverted color */
+        --light-ansi-14: #b884a7; /* Inverted color */
+        --light-ansi-15: #c3c0be; /* Inverted color */
+    }
 
 /* END css/colorscheme.css */
 
@@ -393,6 +393,7 @@ in a {
 }
 
 
+
 /* Media query for smaller screens */
 @media (max-width: 768px) {
 
@@ -427,3 +428,4 @@ in a {
 		margin: 0 auto 0 auto;
 	}
 }
+
