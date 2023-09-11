@@ -1,0 +1,10 @@
+{
+  "name": "T2H",
+  "short_name": "T2H",
+ 
+  "theme_color": "#09f",
+  "background_color": "#ddd",
+  "display": "standalone",
+  "start_url": ".",
+  "description": "convert text to an image that looks like handwriting😛"
+}
