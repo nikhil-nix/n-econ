@@ -241,6 +241,8 @@ img.thumb_inline {
 	float: left;
 	/*	margin: 1em; */
 	margin-right: 2em;
+	position: absolute;
+	z-index: -1;
 }
 
 /* Images/Figures */
