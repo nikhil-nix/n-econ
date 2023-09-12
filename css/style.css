@@ -44,6 +44,8 @@
 /* END css/colorscheme.css */
 
 /* elements */
+
+
 a {
 	color: var(--dark-ansi13);
 	outline-color: invert;
@@ -62,10 +64,12 @@ html {
 	background-color: var(--dark-ansi00-hard);
 	color: var(--dark-ansi15);
 	margin: 0;
+	font-family: DejaVu Serif;
+	font-size: 14px;
 }
 
 body {
-	padding: 0 0.5em;
+	padding: 0.5em;
 }
 
 blockquote {
@@ -123,12 +127,12 @@ section {
 
 article,
 section {
-	max-width: 60%;
+	max-width: 65%;
 }
 
 section,
 .indexlist {
-	line-height: 1.5;
+	line-height: 1.2;
 }
 
 intro {
@@ -241,8 +245,8 @@ img.thumb_inline {
 	float: left;
 	/*	margin: 1em; */
 	margin-right: 2em;
-	position: absolute;
 	z-index: -1;
+	zoom: 0.8;
 }
 
 /* Images/Figures */
@@ -263,12 +267,12 @@ figure img {
 	object-fit: scale-down;
 }
 
-nav,
+/* nav,
 themes,
 footer {
 	background-color: var(--dark-ansi00);
 	color: var(--dark-ansi07);
-}
+} */
 
 header {
 	color: var(--dark-ansi06);
@@ -313,7 +317,7 @@ header {
 
 nav {
 	font-size: large;
-	max-width: 16%;
+	max-width: 26%;
 	font-weight: bold;
 	margin: 0.5rem 2rem 2rem 2rem;
 	padding: 0 1rem 0 1rem;
@@ -357,6 +361,12 @@ iframe[seamless] {
 }
 
 
+
+summary {
+	cursor: pointer; /* Add a pointer cursor to indicate it's clickable */
+	outline: none; /* Remove the default focus outline */
+}
+
 themes {
 	float: right;
 	margin: 0.5rem;
@@ -398,23 +408,25 @@ in a {
 /* Media query for smaller screens */
 @media (max-width: 768px) {
 
-	body,
-	html {
+	body{
 		background-color: var(--dark-ansi00-hard);
 		color: var(--dark-ansi15);
-		margin: 0;
+		margin: 58% 0;
 		padding: 0;
+		max-width: 100%;
 	}
 
 	nav {
 		float: none;
 		font-size: larger;
 		/* Remove the float property */
-		max-width: 50%;
+		max-width: 93%;
 		/* Allow the nav to take up the full width */
 		width: 100%;
 		margin: 0.5rem auto;
 		/* Center the nav and adjust margins */
+		zoom: 1.2;
+		border-radius: 0.9rem;: #076678em;
 	}
 
 	nav3 {
@@ -427,6 +439,42 @@ in a {
 		max-width: 95%;
 		/* Allow articles and sections to take up full width */
 		width: 95%;
-		margin: 0 auto 0 auto;
+		margin: 1rem auto 0 auto;
+		padding-top: 10%;
 	}
+
+	nav {
+		display: flex;
+		flex-direction: column;
+		border-bottom: 1px solid #ccc;
+	}
+
+	/* Style the details element */
+	details {
+		max-height: 22vh; /* Set the maximum height to 10% of the viewport height */
+		overflow: auto; /* Add scrollbars if content exceeds max height */
+		border-bottom: 5px solid #000000;
+	}
+
+	/* Style the scrollbar for the details element */
+details::-webkit-scrollbar {
+    width: 5px; /* Set the width of the scrollbar */
+}
+
+/* Style the scrollbar track */
+details::-webkit-scrollbar-track {
+    background-color: #f1f1f1; /* Set the background color of the track */
+}
+
+/* Style the scrollbar thumb */
+details::-webkit-scrollbar-thumb {
+    background-color: #888; /* Set the color of the thumb */
+    border-radius: 5px; /* Add rounded corners to the thumb */
+}
+
+/* Style the scrollbar thumb on hover */
+details::-webkit-scrollbar-thumb:hover {
+    background-color: #555; /* Change the color of the thumb on hover */
+}
+
 }

@@ -7,6 +7,6 @@
 	background-color: inherit;
  }
  
- img:not([src*=".svg"]), video {  
+/* img:not([src*=".svg"]), video {  
 	filter: invert(100%);
- }
+ }*/
