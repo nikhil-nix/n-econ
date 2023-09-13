@@ -61,7 +61,7 @@ abbr {
 
 body,
 html {
-	background-color: var(--light-ansi00-hard);
+	background-color: var(--dark-ansi00-hard);
 	color: var(--dark-ansi15);
 	margin: 0;
 	font-family: DejaVu Serif;
@@ -116,7 +116,7 @@ section {
 	font-size: larger;
 	margin: 1rem auto 1rem 25%;
 	padding: 0.5rem;
-	background-color: var(--light-ansi00-soft);
+	background-color: var(--dark-ansi00-soft);
 	vertical-align: top;
 	max-width: 60%;
 	width: 100%;
@@ -409,8 +409,8 @@ in a {
 @media (max-width: 768px) {
 
 	body{
-		background-color: var(--light-ansi00-hard);
-		color: var(--light-ansi15);
+		background-color: var(--dark-ansi00-hard);
+		color: var(--dark-ansi15);
 		margin: 58% 0;
 		padding: 0;
 		max-width: 100%;
