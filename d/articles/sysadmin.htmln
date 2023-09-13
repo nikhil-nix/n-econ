@@ -3,7 +3,6 @@
 <head>
                 <meta charset="utf-8"/>
                 <link rel="stylesheet" type="text/css" href="../css/style.css"/>
-                <link rel="stylesheet" type="text/css" href="../css/theme.css"/>
                 <meta name="viewport" content="width=device-width, initial-scale=1">
                 <title>i am sysadmin</title>
 </head>
@@ -26,7 +25,7 @@
                         </ul>
                         .....................................
                                 </details></nav>
-                                <themes><details close=""><summary>Themes&ensp;</summary>&ensp;<a href="sysadmin.x.html">plain HTML</a>&ensp;<br>&ensp;<a href="sysadmin.html">Dark Mode</a></details></themes>
+                                <themes><details close=""><summary>Themes&ensp;</summary>&ensp;<a href="sysadmin.x.html">plain HTML</a>&ensp;<br>&ensp;<a href="sysadmin.l.html">Light Mode</a></details></themes>
 
 <article xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" class="h-entry">
 <a href="sysadmin.html"><h1>Why I am a sysadmin</h1></a>

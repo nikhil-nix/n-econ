@@ -1,0 +1,43 @@
+:root {
+	font-family: serif;
+	text-rendering: optimizelegibility;
+	font-kerning: normal;
+}
+.small-caps { font-variant: small-caps }
+nav li { list-style: none }
+main {
+	margin: 0 auto;
+	display: table;
+}
+code { font-family: monospace }
+.p-nickname::before { content:"(" }
+.p-nickname { font-family: monospace }
+.p-nickname::after { content:")" }
+
+.h-event .p-summary { display: inline-table }
+
+h1,h2,h3,h4,h5,h6 {
+	font-family: sans;
+	font-kerning: auto;
+}
+
+h1,h2 {
+	display: table;
+	padding: 0.25ex 0.5em;
+}
+
+h1 { border-bottom: 2pt solid }
+h2 { border-bottom: 1pt solid }
+
+@media screen {
+	main { max-width: 90em }
+}
+
+@media print {
+	nav, footer { display: none }
+	a::before { content: "[" attr(href) "]("; }
+	a::after  { content: ")" }
+	a::before, a::after { font-family: monospace }
+	a { text-decoration: none }
+	section { page-break-inside: avoid }
+}

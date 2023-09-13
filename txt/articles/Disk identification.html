@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" type="text/css" href="../css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/theme.css"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Home</title>
+	</head>
+	<header class="ccsticky-nav">
+		<nav>
+			<details open="">
+				<summary><a>Links</a></summary>
+				................................
+				<ul>
+					<li><a href="../" target="_parent">Home</a></li>
+					<li><a href="../about/" target="_parent">About Me</a></li>
+					<li><a href="../content" target="_parent">Visual</a></li>
+					<li><a href="../bookmarks" target="_parent">Bookmarks</a></li>
+					....................
+					<li><a href="../resume" target="_parent">Resume</a></li>
+					<li><a href="../work#work" target="_parent">work with me</a></li>
+					........................
+					<li><a href="https://git.fosscommunity.in/on2" target="_parent">/git/</a>: packages</li>
+					<li><a href="../project" target="_parent"> Projects</a></li>
+				</ul>
+				................................
+			</details>
+		</nav>
+		<nav3>
+			<details close="">
+				<summary><a>Themes&ensp;&ensp;&ensp;&ensp;&ensp;</a></summary>
+				<li><a href="index.x.html">plain HTML</a></li>
+				<li><a href="index.html">Dark Mode</a></li>
+			</details>
+		</nav3>
+	</header>
+	<body>
+
+<article xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" class="h-entry">
+<h1 class="p-name"><a class="u-url" href="Disk%20identification.html">Disk identification</a></h1>
+<h2>Introduction/Why?</h2>
+<p>So the one for network interface is now okay-ish. I done a quick look at how it works for… disks. So most of it was done under Linux, but I know this nightmare under OpenSolaris(I recommend <a href="http://sysunconfig.net/unixtips/solaris80.20.pdf">20% of Solaris Knowledge that solves 80% of your needs</a>; but only 8 slices/partitions, non-intuitive, no file hierarchy… why), Plan9front(a bit better, at least partitions are under a directory).</p>
+<p>And as you’re probably using <code>lsblk</code> and/or <code>blkid</code> or even <code>fdisk -l</code>(I use that when I’m on a non-Linux Unix) to identify as a human your disks, I done a quick look for fun at disk identifiers… (intended more for machines I guess) and… oh noes.</p>
+<pre><code>$ <kbd>lsblk -oTRAN,NAME,SIZE,FSTYPE,PARTUUID,UUID,WWN</kbd>
+<samp>TRAN   NAME        SIZE FSTYPE      PARTUUID                             UUID                                 WWN
+usb    sdf           2G
+       └─sdf1        2G vfat
+usb    sdd       931.5G
+       └─sdd1    931.5G ntfs-3g     874ddc9f-01                          FEBC2BA2BC2B5505
+sata   sdb         1.8T zfs_member                                       15625953673200575561                 0x11804586289146122240x
+sata   sdg       111.8G crypto_LUKS                                      7979cfc6-568f-4b3a-bfc4-301c92316767 0x17202986447841742850x
+sata   sdc       189.9G
+       ├─sdc2    189.9G crypto_LUKS caadf50b-7419-4379-b34e-6cbdb9fb9e17 86106360-90e8-425e-b37e-33131b23a6b0
+       │ └─root1 189.9G zfs_member                                       2052176674175130762
+       └─sdc1        2M             d3e52e3c-2c83-48e5-af2f-8c3ce10131aa
+sata   sda       189.9G
+       ├─sda2      256M             b585598d-8b2c-4db8-b58c-65bfe314d57e
+       ├─sda3      248M crypto_LUKS d4d61264-c2c9-4953-8c59-3ac265d986e3 9877c105-252e-4141-97df-358f14daa2a8
+       └─sda1    189.4G crypto_LUKS a359857c-49eb-44c0-936c-464c150d20a0 1c578f43-6f16-497c-ba88-986609ffa1d6
+         └─root  189.4G
+</samp>$ <kbd>blkid</kbd>
+<samp>/dev/sda1: UUID="1c578f43-6f16-497c-ba88-986609ffa1d6" TYPE="crypto_LUKS" PARTLABEL="encrypted" PARTUUID="a359857c-49eb-44c0-936c-464c150d20a0"
+/dev/sda3: UUID="9877c105-252e-4141-97df-358f14daa2a8" TYPE="crypto_LUKS" PARTLABEL="boot-efi" PARTUUID="d4d61264-c2c9-4953-8c59-3ac265d986e3"
+/dev/sdb: LABEL="seagate" UUID="15625953673200575561" UUID_SUB="11105316071247026470" TYPE="zfs_member"
+/dev/sdc2: UUID="86106360-90e8-425e-b37e-33131b23a6b0" TYPE="crypto_LUKS" PARTUUID="caadf50b-7419-4379-b34e-6cbdb9fb9e17"
+/dev/sdd1: LABEL="TOSHIBA EXT" UUID="FEBC2BA2BC2B5505" TYPE="ntfs" PARTUUID="874ddc9f-01"
+/dev/mapper/root: LABEL="zroot" UUID="2052176674175130762" UUID_SUB="12007847542772910046" TYPE="zfs_member"
+/dev/sdg: UUID="7979cfc6-568f-4b3a-bfc4-301c92316767" TYPE="crypto_LUKS"
+/dev/mapper/root1: LABEL="zroot" UUID="2052176674175130762" UUID_SUB="5697203163307082646" TYPE="zfs_member"
+/dev/sda2: PARTLABEL="boot" PARTUUID="b585598d-8b2c-4db8-b58c-65bfe314d57e"
+/dev/sdc1: PARTUUID="d3e52e3c-2c83-48e5-af2f-8c3ce10131aa"
+/dev/sdf1: SEC_TYPE="msdos" TYPE="vfat"
+</samp></code></pre>
+<p>If you look enough at it… NONE of them works and wtf is <code>UUID_SUB</code> printing out of nowhere. So as you’re probably not <code>LABEL</code>’ing all your hard-drives because your system sucks… The only thing I found so far that is the least broken under linux(+(e)udev) is <code>/dev/disk/by-id</code>.</p>
+<h2>Proposition</h2>
+<p>So quick list of things that are nice/works:</p>
+<ul>
+	<li>SunOS: Controller, Target-id, Drive, Slice; but moved to a tree would be better as it’s more flexible</li>
+	<li><code>DISK ID</code> (MODEL+SERIAL) and partition ID (MBR/GPT thing)</li>
+	<li>PCI/<code>BUS ID</code>s (like: <code>/proc/bus/pci/x/y</code> in Linux)</li>
+	<li>Plan9: disk as a directory, partitions as files, <code>data</code> for whole disk access</li>
+	<li><code>DISK SLOT</code>: useful when you plug (some of) your disk(s) by their slot (IDE: Primary/Secondary Master/Slave; SATA: 1,2,3…; USB: bus/network_iface equivalent?)</li>
+</ul>
+<p>Here is an example of a file hierarchy of my idea, based on that:</p>
+<ul>
+	<li><code>/dev/…/${BUS ID}/</code><ul>
+		<li><code>by-label/${DISK LABEL} → ${DISK ID}</code></li>
+		<li><code>by-slot/${DISK SLOT} → ${DISK ID}</code></li>
+		<li><code>${DISK ID}</code><ul>
+			<li><code>by-label/${PARTITION LABEL} → ${PARTITION ID}</code></li>
+			<li><code>${PARTITION ID}</code></li>
+			<li><code>raw</code></li>
+		</ul></li>
+	</ul></li>
+</ul>
+<h3>Know things</h3>
+<ul>
+	<li>labels being a free-form string it can be the same as another ID, a <code>by-label</code> directory have to be made</li>
+	<li>I have not mentionned disk and partitions UUIDs, could be kept for legacy, but I’m in favor of not keeping them as they are broken</li>
+	<li>in Plan9 there is the <code>data</code> file to have full access to the disk, I named it <code>raw</code> here as I think it’s more intiutive (and keeping the name <code>data</code> because of Plan9 is almost no use considering how dead Plan9 currently is compared to Linux|BSD|Solaris)</li>
+	<li>The <code>BUS ID</code> directory allows to get sane <code>DISK SLOT</code></li>
+	<li>Maybe it doesn’t work for everything (please contact, fork, patch, …) but as it is about the same thing as what SunOS and Plan9 uses I think I’m safe saying : This should work and be flexible enough</li>
+</ul>
+<p>Also anyway I think <code>findfs(8)</code> should be modified to add at least the <code>DISK ID</code> in it</p>
+<p>Note: Turns out Haiku uses almost exactly my idea, I think I can make mine compatible with it (because I think that can be how good standards are made)</p>
+</article>
+<footer>
+	<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img loading="lazy" alt="CC-BY-SA" src="https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by-sa.svg" /></a>
+</footer>
+</body>
+</html>

@@ -4,7 +4,7 @@
                 <meta charset="utf-8"/>
                 <meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" type="text/css" href="../css/style.css"/>
-		<link rel="stylesheet" type="text/css" href="../css/theme.css"/>
+
                 <title>Work With Me</title>
 </head>
 <body> <header>I quit working and not taking any engagements. this website isn't maintained anymore, links and pages are intentionally deleted.</header>
@@ -12,21 +12,21 @@
 						<summary>Links</summary>
 			                       .....................................
                         <ul>
-                                <li><a href="../index.l.html">Home</a></li>
-                                <li><a href="../about/index.l.html#info">About Me</a></li>
+                                <li><a href="../">Home</a></li>
+                                <li><a href="../about#info">About Me</a></li>
 				<li><a href="../activism">Activism</a></li>
 				<li><a href="bookmarks.html">Bookmarks</a></li>
                                 <li><a href="../econ">Books/Notes</a></li>
 				<li><a href="../cs">coding style</a></li>
                                 <li><a href="../resume">Resume</a></li>
-                                <li><a href="#work">work with me</a></li>
+                                <li><a href="">work with me</a></li>
                         .............................
                                 <li><a href="../git">/git/</a>: packages</li>
 				<li><a href="../dot"> /dot:files/ /scripts/</a></li>
                         </ul>
                         .....................................
 		</details></nav>
-                <themes><details close=""><summary>Themes&ensp;&ensp;&ensp;</summary>&ensp;<a href="index.x.html">plain HTML</a>&ensp;<br>&ensp;<a href="index.html">Dark Mode</a></details></themes>
+               		 	<themes><details close=""><summary>Themes&ensp;&ensp;&ensp;</summary>&ensp;<a href="index.x.html">plain HTML</a>&ensp;<br>&ensp;<a href="index.l.html">Light Mode</a></details></themes>
 
 		<section id=work> 
 			<h3>my work usally involves : </h3>
