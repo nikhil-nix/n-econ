@@ -82,6 +82,7 @@ pre {
 	background-color: var(--dark-ansi00);
 	color: var(--dark-ansi15);
 	font-family: monospace;
+	font-size: 9px;
 }
 
 code {
@@ -246,7 +247,7 @@ img.thumb_inline {
 	/*	margin: 1em; */
 	margin-right: 2em;
 	z-index: -1;
-	zoom: 0.8;
+	zoom: 3;
 }
 
 /* Images/Figures */

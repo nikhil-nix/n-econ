@@ -82,6 +82,7 @@ pre {
 	background-color: var(--dark-ansi00);
 	color: var(--dark-ansi15);
 	font-family: monospace;
+	font-size: 9px;
 }
 
 code {

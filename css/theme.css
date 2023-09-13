@@ -12,7 +12,7 @@
  }
 
  .invertible {
-    filter: invert(1) contrast(1) saturate(1) hue-rotate(180deg);
+    filter: invert(1) contrast(0.7) saturate(1) hue-rotate(180deg);
 }
 
  
