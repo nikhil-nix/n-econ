@@ -247,7 +247,7 @@ img.thumb_inline {
 	/*	margin: 1em; */
 	margin-right: 2em;
 	z-index: -1;
-	zoom: 3;
+	zoom: 0.8;
 }
 
 /* Images/Figures */
