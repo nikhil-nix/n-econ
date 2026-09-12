@@ -115,7 +115,7 @@ main {
 article,
 section {
 	font-size: larger;
-	margin: 1rem auto 1rem 25%;
+	margin: 0rem auto 1rem 25%;
 	padding: 0.5rem;
 	background-color: var(--dark-ansi00-soft);
 	vertical-align: top;
@@ -242,8 +242,16 @@ img.thumb_inline {
 	clear: both;
 }
 
+#avatar img {
+    width: 290px;
+    max-width: 100%;
+    height: auto;
+}
+
 #avatar {
-	float: left;
+    width: 290px;
+    max-width: 100%;
+ 	float: left;
 	/*	margin: 1em; */
 	margin-right: 2em;
 	z-index: -1;
@@ -340,6 +348,23 @@ nav3,
 	line-height: 1.5;
 }
 
+.indexlist {
+     padding-left: 10;
+}
+
+.indexlist li {
+    margin-bottom: 1.5rem;
+}
+
+.indexlist li:last-child {
+    margin-bottom: 0;
+}
+
+.indexlist .url {
+    display: block;
+    margin-left: 0.25rem;
+    overflow-wrap: anywhere;
+}
 
 iframe {
 	font-size: larger;
@@ -406,34 +431,136 @@ in a {
 }
 
 
-/* Media query for smaller screens */
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.ccsticky-nav {
+    width: 100%;
+    height: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+
+/* -------------------------
+   Desktop navigation
+   ------------------------- */
+
+.desktop-nav {
+    font-size: large;
+    max-width: 26%;
+    font-weight: bold;
+    margin: 0.5rem 2rem 2rem 2rem;
+    padding: 0 1rem 0 1rem;
+    float: left;
+}
+
+.desktop-nav,
+.indexlist {
+    line-height: 1.5;
+}
+
+.desktop-nav ul {
+    padding: 20px;
+    margin: 0;
+    list-style: none;
+    text-align: center;
+}
+
+.desktop-nav ul li {
+    margin: 0;
+}
+
+.desktop-nav ul li a {
+    transition: all 0.2s ease;
+}
+
+.desktop-nav ul li a:hover {
+    color: #ffffff;
+}
+
+
+/* -------------------------
+   Desktop theme navigation
+   ------------------------- */
+
+.desktop-themes {
+    float: right;
+    margin-right: 1rem;
+}
+
+.desktop-themes,
+.indexlist {
+    line-height: 1.5;
+}
+
+.desktop-themes ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.desktop-themes li {
+    display: inline-block;
+    margin-left: 0.5rem;
+}
+
+
+/* -------------------------
+   Theme buttons
+   ------------------------- */
+
+.desktop-themes button,
+.mobile-themes button {
+    border: none;
+    padding: 0;
+    margin: 0;
+    background: none;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+}
+
+.desktop-themes button:hover,
+.mobile-themes button:hover {
+    color: #ffffff;
+}
+
+
+/* -------------------------
+   Mobile navigation
+   ------------------------- */
+
+.mobile-nav {
+    display: none;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
 @media (max-width: 768px) {
 
+    html,
 	body{
 		background-color: var(--dark-ansi00-hard);
 		color: var(--dark-ansi15);
-		margin: 58% 0;
-		padding: 0;
+ 		padding: 0;
 		max-width: 100%;
+		overflow-x: hidden;
+		padding-top: 5rem;
 	}
+		    
+    /* Hide desktop navigation */
 
-	nav {
-		float: none;
-		font-size: larger;
-		/* Remove the float property */
-		max-width: 93%;
-		/* Allow the nav to take up the full width */
-		width: 100%;
-		margin: 0.5rem auto;
-		/* Center the nav and adjust margins */
-		zoom: 1.2;
-		border-radius: 0.9rem;: #076678em;
-	}
-
-	nav3 {
-		margin-right: 0rem;
-	}
-
+    .desktop-nav,
+    .desktop-themes {
+        display: none;
+    }
 
 	article,
 	section {
@@ -441,41 +568,138 @@ in a {
 		/* Allow articles and sections to take up full width */
 		width: 95%;
 		margin: 1rem auto 0 auto;
-		padding-top: 10%;
+		padding-top: 5%;
 	}
+	    #avatar {
+        width: 100%;
+        margin: 0;
+        text-align: center;
+    }
 
-	nav {
-		display: flex;
-		flex-direction: column;
-		border-bottom: 1px solid #ccc;
-	}
+    #avatar img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+    }
+    /*
+     * Keep navbar pinned to the top while scrolling.
+     */
 
-	/* Style the details element */
-	details {
-		max-height: 22vh; /* Set the maximum height to 10% of the viewport height */
-		overflow: auto; /* Add scrollbars if content exceeds max height */
-		border-bottom: 5px solid #000000;
-	}
+    .ccsticky-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
 
-	/* Style the scrollbar for the details element */
-details::-webkit-scrollbar {
-    width: 5px; /* Set the width of the scrollbar */
-}
+        width: 100%;
+        height: auto;
 
-/* Style the scrollbar track */
-details::-webkit-scrollbar-track {
-    background-color: #f1f1f1; /* Set the background color of the track */
-}
+        margin: 0;
+        padding: 0;
 
-/* Style the scrollbar thumb */
-details::-webkit-scrollbar-thumb {
-    background-color: #888; /* Set the color of the thumb */
-    border-radius: 5px; /* Add rounded corners to the thumb */
-}
+        background-color: var(--dark-ansi00-hard);
 
-/* Style the scrollbar thumb on hover */
-details::-webkit-scrollbar-thumb:hover {
-    background-color: #555; /* Change the color of the thumb on hover */
-}
+        box-sizing: border-box;
+
+        z-index: 1000;
+    }
+
+
+    /*
+     * Mobile navigation is normal content inside
+     * the fixed header.
+     */
+
+    .mobile-nav {
+        display: block;
+
+        width: 100%;
+        max-width: 100%;
+
+        margin: 0;
+        padding: 0.25rem 0;
+
+        box-sizing: border-box;
+    }
+
+
+    /*
+     * THE IMPORTANT PART:
+     *
+     * flex-wrap allows additional lines.
+     * There is deliberately NO overflow-x:auto.
+     */
+
+    .mobile-nav ul {
+        display: flex;
+
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        justify-content: flex-start;
+        align-items: center;
+
+        width: 100%;
+        max-width: 100%;
+
+        margin: 0;
+        padding: 0.35rem 0.75rem;
+
+        list-style: none;
+
+        gap: 0.3rem 1rem;
+
+        overflow: visible;
+        white-space: normal;
+
+        box-sizing: border-box;
+    }
+
+    .mobile-nav li {
+        flex: 0 0 auto;
+        margin: 0;
+        padding: 0;
+    }
+
+    .mobile-nav a {
+        white-space: nowrap;
+    }
+
+
+    /*
+     * Mobile theme controls.
+     * They are part of the navbar, so they also remain pinned.
+     */
+
+    .mobile-themes {
+        display: flex;
+
+        flex-wrap: wrap;
+
+        align-items: center;
+
+        width: 100%;
+
+        padding: 0.2rem 0.75rem 0.45rem;
+
+        gap: 0.35rem;
+
+        box-sizing: border-box;
+    }
+
+    .mobile-themes button {
+        white-space: nowrap;
+    }
+
+
+    /*
+     * Prevent any old details scrolling rules
+     * from affecting the mobile navbar.
+     */
+
+    .ccsticky-nav details {
+        max-height: none;
+        overflow: visible;
+        border: none;
+    }
 
 }
