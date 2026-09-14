@@ -61,9 +61,6 @@ update_header() {
             <ul>\\
                 <li><a href=\"${PREFIX}\" target=\"_parent\">Home</a></li>\\
                 <li><a href=\"${PREFIX}about/\" target=\"_parent\">About Me</a></li>\\
-                <li><a href=\"${PREFIX}content\" target=\"_parent\">Visuals</a></li>\\
-                <li><a href=\"${PREFIX}bookmarks\" target=\"_parent\">Bookmarks</a></li>\\
-                    ....................\\
                 <li><a href=\"${PREFIX}resume\" target=\"_parent\">Resume</a></li>\\
                 <li><a href=\"https://git.fosscommunity.in/on2\" target=\"_parent\">/git/</a>: packages</li>\\
                     ........................\\
